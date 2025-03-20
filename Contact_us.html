@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sarkari Result</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #FF5722, #FF9800);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #ffeb3b;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #FF5722;
+            position: relative;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #FF5722;
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #FF5722;
+            font-size: 1.4rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #FFF3E0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #FF5722;
+            font-size: 18px;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #444;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: #FF5722;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: #FF5722;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: #E64A19;
+            transform: scale(1.1);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 20px;
+            color: #FF5722;
+            font-size: 1.4rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, 
+        .form-group textarea:focus, 
+        .form-group select:focus {
+            border-color: #FF5722;
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #E64A19;
+        }
+        
+        .map-section {
+            margin-top: 60px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 2px;
+            background-color: #FF5722;
+        }
+        
+        .footer-section p, 
+        .footer-section a {
+            color: #bbb;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .bottom-bar {
+            background-color: #222;
+            padding: 15px 0;
+            text-align: center;
+            color: #bbb;
+            margin-top: 40px;
+        }
+        
+        .faq-section {
+            margin-top: 60px;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #FF5722;
+        }
+        
+        .faq-answer {
+            padding: 0 20px 15px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+            
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Sarkari <span>Result</span></a>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="sarkariresultclone.html">Home</a></li>
+                    <li><a href="Latest_Job.html">Latest Jobs</a></li>
+                    <li><a href="Result.html">Results</a></li>
+                    <li><a href="admit_card.html">Admit Card</a></li>
+                    <li><a href="Contact_us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Have questions about government jobs, exams, or results? Our team is here to help. Fill out the form below or use our contact details to get in touch with us.</p>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Our Location</h4>
+                            <p>123 Sarkari Building, Civil Lines</p>
+                            <p>New Delhi - 110054, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Phone Number</h4>
+                            <p><a href="tel:+911234567890">+91 123 456 7890</a></p>
+                            <p>(Monday to Saturday, 10:00 AM - 6:00 PM)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:contact@sarkariresult.com">contact@sarkariresult.com</a></p>
+                            <p><a href="mailto:support@sarkariresult.com">support@sarkariresult.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-text">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Saturday: 10:00 AM - 6:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">fb</a>
+                    <a href="#" class="social-link">tw</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">yt</a>
+                    <a href="#" class="social-link">tg</a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="">Select a subject</option>
+                            <option value="job-inquiry">Job Inquiry</option>
+                            <option value="exam-related">Exam Related Query</option>
+                            <option value="result-inquiry">Result Inquiry</option>
+                            <option value="document-verification">Document Verification</option>
+                            <option value="website-issue">Website Technical Issue</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="map-section">
+            <h2 class="page-title">Our Location</h2>
+            <div class="map-container">
+                [Google Map would be displayed here]
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="page-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I check my exam results on Sarkari Result?</div>
+                <div class="faq-answer">
+                    <p>To check your exam results, navigate to the "Results" section on our website. Search for your specific exam or organization, click on the relevant link, and follow the instructions provided. You will typically need to enter your roll number, registration number, or other identification details to access your results.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How can I download my admit card?</div>
+                <div class="faq-answer">
+                    <p>To download your admit card, go to the "Admit Card" section of our website. Find the link for your specific exam, click on it, and you will be redirected to the official page where you can enter your registration details to download your admit card.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How frequently are new job notifications posted?</div>
+                <div class="faq-answer">
+                    <p>We update our website daily with new job notifications from various government departments and organizations. We recommend checking our website regularly or subscribing to our notification service to stay updated with the latest job opportunities.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What should I do if I find incorrect information on your website?</div>
+                <div class="faq-answer">
+                    <p>If you find any incorrect information on our website, please report it to us immediately using the contact form above. Please provide specific details about the incorrect information, including the page URL and the correct information if possible. We strive to maintain accuracy and will address the issue promptly.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Does Sarkari Result charge any fees for its services?</div>
+                <div class="faq-answer">
+                    <p>No, Sarkari Result does not charge any fees for accessing job notifications, results, or other information available on our website. Our service is completely free for all users. Beware of any fraudulent websites or individuals claiming to be associated with Sarkari Result and asking for payment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Sarkari Result</h3>
+                <p>Sarkari Result is a leading job portal that provides the latest information about government jobs, exam results, admit cards, and answer keys across India.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="sarkariresultclone.html">Home</a>
+                <a href="Latest_Job.html">Latest Jobs</a>
+                <a href="Result.html">Results</a>
+                <a href="admit_card.html">Admit Cards</a>
+                <a href="syllabus.html">Syllabus</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Important Links</h3>
+                <a href="Privacy.html">Privacy Policy</a>
+                <a href="Term&cond.html">Terms & Conditions</a>
+                <a href="Contact_us.html">Contact Us</a>
+                <a href="About.html">About Us</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>Email: contact@sarkariresult.com</p>
+                <p>Phone: +91 123 456 7890</p>
+                <p>Address: New Delhi, India</p>
+            </div>
+        </div>
+        
+        <div class="bottom-bar">
+            <p>&copy; 2025 Sarkari Result. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

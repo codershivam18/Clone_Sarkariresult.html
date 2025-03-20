@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Open - Sarkari Result - सरकारी रिजल्ट</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        /* Header Styling */
+        header {
+            background-color: #cc0000;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            padding: 5px 0;
+        }
+        
+        .sub-logo {
+            font-size: 14px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        /* Navigation Styling */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            padding: 10px 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .active {
+            background-color: #555;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        /* Admission Content */
+        .admission-content {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .page-title {
+            background-color: #cc0000;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 3px;
+        }
+        
+        .admission-section {
+            margin-bottom: 25px;
+        }
+        
+        .admission-section h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #cc0000;
+        }
+        
+        .admission-section p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .admission-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .admission-card-header {
+            background-color: #f2f2f2;
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .admission-card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .institute-name {
+            color: #666;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        
+        .admission-highlight {
+            display: inline-block;
+            background-color: #cc0000;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .admission-card-body {
+            padding: 15px;
+        }
+        
+        .admission-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .admission-meta-item {
+            flex: 1;
+            min-width: 180px;
+            background-color: #f9f9f9;
+            padding: 8px 12px;
+            border-radius: 3px;
+        }
+        
+        .meta-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        .meta-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .admission-details {
+            margin-bottom: 15px;
+        }
+        
+        .admission-details h4 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .admission-details ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .admission-details ul li {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #444;
+        }
+        
+        .important-dates {
+            background-color: #fff9e6;
+            border: 1px solid #ffedac;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+        
+        .important-dates h4 {
+            color: #b37400;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .dates-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        
+        .dates-table th, .dates-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 14px;
+        }
+        
+        .dates-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .dates-table td {
+            color: #444;
+        }
+        
+        .card-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .card-button {
+            flex: 1;
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .card-button:hover {
+            background-color: #004c99;
+        }
+        
+        .card-button-secondary {
+            background-color: #666;
+        }
+        
+        .card-button-secondary:hover {
+            background-color: #444;
+        }
+        
+        .filters {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .filters h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .filter-item {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .filter-label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .filter-select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .filter-button {
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .filter-button:hover {
+            background-color: #990000;
+        }
+        
+        .notification-box {
+            background-color: #e6f7ff;
+            border: 1px solid #b3e0ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .notification-box h3 {
+            color: #0066cc;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .notification-box p {
+            color: #444;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .notification-button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .notification-button:hover {
+            background-color: #004c99;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .pagination a {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 0 3px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            color: #333;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        
+        .pagination a.active {
+            background-color: #cc0000;
+            color: white;
+            border-color: #cc0000;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+        
+        .footer-links {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul li {
+                padding: 8px 10px;
+            }
+            
+            .admission-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .card-buttons {
+                flex-direction: column;
+            }
+            
+            .filter-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Sarkari Result</div>
+        <div class="sub-logo">सरकारी रिजल्ट</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="sarkariresultclone.html">Home</a></li>
+            <li><a href="Latest_Job.html">Latest Jobs</a></li>
+            <li><a href="Result.html">Results</a></li>
+            <li><a href="admit_card.html">Admit Card</a></li>1
+            <li class="active"><a href="Admission.html">Admission</a></li>
+            <li><a href="About_us.html">About Us</a></li>
+            <li><a href="Contact_us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="admission-content">
+            <div class="page-title">Admission Open 2025-26</div>
+            
+            <div class="notification-box">
+                <h3>Important Notice!</h3>
+                <p>Applications for various government and private institutions for the academic year 2025-26 are now open. Check eligibility criteria and important dates before applying. For official updates, always verify from the official websites of respective institutions.</p>
+                <a href="#" class="notification-button">Subscribe for Updates</a>
+            </div>
+            
+            <div class="filters">
+                <h3>Find Admissions</h3>
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <div class="filter-label">Category</div>
+                        <select class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="medical">Medical</option>
+                            <option value="management">Management</option>
+                            <option value="arts">Arts & Humanities</option>
+                            <option value="science">Science</option>
+                            <option value="law">Law</option>
+                            <option value="diploma">Diploma</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <div class="filter-label">State</div>
+                        <select class="filter-select">
+                            <option value="">All States</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="up">Uttar Pradesh</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="mp">Madhya Pradesh</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="gujarat">Gujarat</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <div class="filter-label">Qualification</div>
+                        <select class="filter-select">
+                            <option value="">All Qualifications</option>
+                            <option value="10th">10th</option>
+                            <option value="12th">12th</option>
+                            <option value="graduation">Graduation</option>
+                            <option value="post-graduation">Post Graduation</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="filter-button">Apply Filters</button>
+            </div>
+            
+            <div class="admission-section">
+                <h2>Latest Admission Notifications</h2>
+                
+                <div class="admission-card">
+                    <div class="admission-card-header">
+                        <div class="admission-card-title">
+                            IIT JEE Advanced 2025 <span class="institute-name">Indian Institutes of Technology</span>
+                            <span class="admission-highlight">Engineering</span>
+                        </div>
+                    </div>
+                    <div class="admission-card-body">
+                        <div class="admission-meta">
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Application Status</div>
+                                <div class="meta-value">Open</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Starting Date</div>
+                                <div class="meta-value">05 April 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Last Date</div>
+                                <div class="meta-value">30 April 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Exam Date</div>
+                                <div class="meta-value">02 June 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="admission-details">
+                            <h4>Eligibility</h4>
+                            <ul>
+                                <li>Qualified in JEE Main 2025 (Top 2,50,000 candidates)</li>
+                                <li>Passed 12th standard or equivalent in 2024 or 2025</li>
+                                <li>Maximum of two attempts in consecutive years</li>
+                                <li>Minimum 75% marks in 12th (65% for SC/ST/PwD)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="important-dates">
+                            <h4>Important Dates</h4>
+                            <table class="dates-table">
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                </tr>
+                                <tr>
+                                    <td>Online Registration Starts</td>
+                                    <td>05 April 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Date for Registration</td>
+                                    <td>30 April 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Admit Card Download</td>
+                                    <td>25 May 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Examination Date</td>
+                                    <td>02 June 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Result Declaration</td>
+                                    <td>15 June 2025</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="card-buttons">
+                            <a href="#" class="card-button">Apply Now</a>
+                            <a href="#" class="card-button card-button-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admission-card">
+                    <div class="admission-card-header">
+                        <div class="admission-card-title">
+                            NEET UG 2025 <span class="institute-name">National Testing Agency</span>
+                            <span class="admission-highlight">Medical</span>
+                        </div>
+                    </div>
+                    <div class="admission-card-body">
+                        <div class="admission-meta">
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Application Status</div>
+                                <div class="meta-value">Open</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Starting Date</div>
+                                <div class="meta-value">10 March 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Last Date</div>
+                                <div class="meta-value">15 April 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Exam Date</div>
+                                <div class="meta-value">05 May 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="admission-details">
+                            <h4>Eligibility</h4>
+                            <ul>
+                                <li>10+2 with Physics, Chemistry, Biology</li>
+                                <li>Minimum 50% marks in PCB (40% for SC/ST/OBC)</li>
+                                <li>Age: 17 years as on 31st December 2025</li>
+                                <li>No upper age limit as per Supreme Court order</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="important-dates">
+                            <h4>Important Dates</h4>
+                            <table class="dates-table">
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                </tr>
+                                <tr>
+                                    <td>Online Registration Starts</td>
+                                    <td>10 March 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Date for Registration</td>
+                                    <td>15 April 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Admit Card Download</td>
+                                    <td>28 April 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Examination Date</td>
+                                    <td>05 May 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Result Declaration</td>
+                                    <td>10 June 2025</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="card-buttons">
+                            <a href="#" class="card-button">Apply Now</a>
+                            <a href="#" class="card-button card-button-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admission-card">
+                    <div class="admission-card-header">
+                        <div class="admission-card-title">
+                            CAT 2025 <span class="institute-name">Indian Institutes of Management</span>
+                            <span class="admission-highlight">Management</span>
+                        </div>
+                    </div>
+                    <div class="admission-card-body">
+                        <div class="admission-meta">
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Application Status</div>
+                                <div class="meta-value">Opening Soon</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Starting Date</div>
+                                <div class="meta-value">01 August 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Last Date</div>
+                                <div class="meta-value">15 September 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Exam Date</div>
+                                <div class="meta-value">24 November 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="admission-details">
+                            <h4>Eligibility</h4>
+                            <ul>
+                                <li>Bachelor's degree with at least 50% marks or equivalent CGPA</li>
+                                <li>Final year students can also apply</li>
+                                <li>No specific age limit</li>
+                                <li>Reservation as per Government of India rules</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="important-dates">
+                            <h4>Important Dates</h4>
+                            <table class="dates-table">
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                </tr>
+                                <tr>
+                                    <td>Online Registration Starts</td>
+                                    <td>01 August 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Date for Registration</td>
+                                    <td>15 September 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Admit Card Download</td>
+                                    <td>15 November 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Examination Date</td>
+                                    <td>24 November 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Result Declaration</td>
+                                    <td>10 January 2026</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="card-buttons">
+                            <a href="#" class="card-button card-button-secondary">Notify Me</a>
+                            <a href="#" class="card-button card-button-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admission-card">
+                    <div class="admission-card-header">
+                        <div class="admission-card-title">
+                            Delhi University Admission 2025 <span class="institute-name">University of Delhi</span>
+                            <span class="admission-highlight">Various Courses</span>
+                        </div>
+                    </div>
+                    <div class="admission-card-body">
+                        <div class="admission-meta">
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Application Status</div>
+                                <div class="meta-value">Open</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Starting Date</div>
+                                <div class="meta-value">20 May 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Last Date</div>
+                                <div class="meta-value">30 June 2025</div>
+                            </div>
+                            <div class="admission-meta-item">
+                                <div class="meta-label">Academic Session</div>
+                                <div class="meta-value">2025-26</div>
+                            </div>
+                        </div>
+                        
+                        <div class="admission-details">
+                            <h4>Courses Offered</h4>
+                            <ul>
+                                <li>Undergraduate Programs (BA, B.Sc, B.Com, BBA, etc.)</li>
+                                <li>Postgraduate Programs (MA, M.Sc, M.Com, MBA, etc.)</li>
+                                <li>Ph.D. Programs</li>
+                                <li>Certificate and Diploma Courses</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="important-dates">
+                            <h4>Important Dates</h4>
+                            <table class="dates-table">
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                </tr>
+                                <tr>
+                                    <td>Online Registration Starts</td>
+                                    <td>20 May 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Date for Registration</td>
+                                    <td>30 June 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>First Merit List</td>
+                                    <td>10 July 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Second Merit List</td>
+                                    <td>20 July 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Commencement of Classes</td>
+                                    <td>01 August 2025</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="card-buttons">
+                            <a href="#" class="card-button">Apply Now</a>
+                            <a href="#" class="card-button card-button-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">&raquo;</a>
+            </div>
+            
+            <div class="admission-section">
+                <h2>How to Apply for Admissions</h2>
+                <p>Follow these steps to apply for admissions through the official portals:</p>
+                <ol style="margin-left: 20px; margin-bottom: 15px;">
+                    <li>Visit the official website of the institution or examination authority.</li>
+                    <li>Register yourself by providing basic details like name, email ID, and mobile number.</li>
+                    <li>Fill in the application form with all required personal, academic, and other details.</li>
+                    <li>Upload scanned copies of photographs, signatures, and required documents as per specifications.</li>
+                    <li>Pay the application fee through online payment modes like credit/debit card, net banking, UPI, etc.</li>
+                    <li>Submit the application and take a printout of the confirmation page for future reference.</li>
+                    <li>Keep tracking your application status and check for updates regularly.</li>
+                </ol>
+                <p>Note: Always check the eligibility criteria, important dates, and document requirements before applying for any admission process.</p>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Never Miss an Admission Notification</h3>
+                <p>Subscribe to our alerts and stay updated with the latest admission notifications</p>
+                <a href="#" class="cta-button">Subscribe Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="sarkariresultclone.html">Home</a>
+            <a href="About_us.html">About Us</a>
+            <a href="Privacy.html">Terms & Conditions</a>
+            <a href="Contact_us.html">Contact Us</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Sarkari Result. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarkari Result - सरकारी रिजल्ट</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        /* Header Styling */
+        header {
+            background-color: #cc0000;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            padding: 5px 0;
+        }
+        
+        .sub-logo {
+            font-size: 14px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        /* Navigation Styling */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            padding: 10px 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 2;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-right: 15px;
+        }
+        
+        .content-title {
+            background-color: #cc0000;
+            color: white;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .post {
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 15px;
+        }
+        
+        .post-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .post-title a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .post-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .post-meta {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        
+        .post-content {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        
+        .read-more:hover {
+            background-color: #004c99;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            flex: 1;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .widget {
+            margin-bottom: 20px;
+        }
+        
+        .widget-title {
+            background-color: #cc0000;
+            color: white;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .widget-content ul {
+            list-style-type: none;
+        }
+        
+        .widget-content ul li {
+            border-bottom: 1px dotted #ddd;
+            padding: 8px 0;
+        }
+        
+        .widget-content ul li a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .widget-content ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+        
+        .footer-links {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .main-content {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            nav ul li {
+                padding: 8px 10px;
+            }
+        }
+        
+        /* Important Notice Marquee */
+        .marquee-container {
+            background-color: #ffeb3b;
+            padding: 8px 0;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .marquee {
+            display: inline-block;
+            width: 100%;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+            color: #cc0000;
+            font-weight: bold;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+            color: aqua;
+            background-color: #ffeb3b;
+        }
+        
+        .btn {
+            background-color: #cc7a00;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background-color: #004c99;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Sarkari Result</div>
+        <div class="sub-logo">सरकारी रिजल्ट</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="sarkariresultclone.html">Home</a></li>
+            <li><a href="Latest_Job.html">Latest Jobs</a></li>
+            <li><a href="Result.html">Results</a></li>
+            <li><a href="admit_card.html">Admit Card</a></li>
+            <li><a href="Admission.html">Admission</a></li>
+            <li><a href="Contact_us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <div class="marquee-container">
+        <div class="marquee">
+            Important Notice: UPSC Civil Services 2025 Notification Released | SSC CHSL 2025 Application Form Available | Railway RRB NTPC Results Declared | IBPS PO Mains Results Out
+        </div>
+    </div>
+    
+    <div class="container">
+        <main class="main-content">
+            <div class="content-title">Latest Updates</div>
+            
+            <div class="btn-container">
+                <a href="#" class="btn">RPF Constable</a>
+                <a href="#" class="btn">CISF Tradesman </a>
+                <a href="#" class="btn">CUET UG 2025</a>
+                <a href="#" class="btn">Army Agniveer 2025</a>
+                <a href="#" class="btn">UPPSC Pre 2025</a>
+                <a href="#" class="btn">JEECUP 2025</a>
+            </div>
+            
+            <div class="post">
+                <h2 class="post-title"><a href="#">UPSC Civil Services 2025 Notification Released</a></h2>
+                <div class="post-meta">Posted on: March 19, 2025 | Category: UPSC</div>
+                <div class="post-content">
+                    Union Public Service Commission (UPSC) has released the notification for Civil Services Examination 2025. Interested candidates can apply online from March 20 to April 10, 2025. The preliminary examination is scheduled for June 15, 2025.
+                </div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            
+            <div class="post">
+                <h2 class="post-title"><a href="#">SSC CHSL 2025 Application Form Available</a></h2>
+                <div class="post-meta">Posted on: March 18, 2025 | Category: SSC</div>
+                <div class="post-content">
+                    Staff Selection Commission (SSC) has released the application form for Combined Higher Secondary Level (CHSL) Examination 2025. Eligible candidates can apply online from March 18 to April 15, 2025. The Tier-I examination will be conducted in June 2025.
+                </div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            
+            <div class="post">
+                <h2 class="post-title"><a href="#">Railway RRB NTPC Results Declared</a></h2>
+                <div class="post-meta">Posted on: March 15, 2025 | Category: Railways</div>
+                <div class="post-content">
+                    Railway Recruitment Board (RRB) has declared the results for Non-Technical Popular Categories (NTPC) examination. Candidates can check their results on the official website of their respective RRBs. The document verification process will start from April 5, 2025.
+                </div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            
+            <div class="post">
+                <h2 class="post-title"><a href="#">IBPS PO Mains Results Out</a></h2>
+                <div class="post-meta">Posted on: March 12, 2025 | Category: Bank Jobs</div>
+                <div class="post-content">
+                    Institute of Banking Personnel Selection (IBPS) has released the mains results for Probationary Officer (PO) examination. Shortlisted candidates will be called for interview, which is scheduled to be held in April 2025.
+                </div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            
+            <div class="post">
+                <h2 class="post-title"><a href="#">NEET UG 2025 Registration Begins</a></h2>
+                <div class="post-meta">Posted on: March 10, 2025 | Category: Medical</div>
+                <div class="post-content">
+                    National Testing Agency (NTA) has started the registration process for National Eligibility cum Entrance Test (NEET) UG 2025. Interested candidates can apply online till April 5, 2025. The examination is scheduled to be held on May 8, 2025.
+                </div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </main>
+        
+        <aside class="sidebar">
+            <div class="widget">
+                <div class="widget-title">Important Links</div>
+                <div class="widget-content">
+                    <ul>
+                        <li><a href="#">UPSC</a></li>
+                        <li><a href="#">SSC</a></li>
+                        <li><a href="#">Railway</a></li>
+                        <li><a href="#">Bank Jobs</a></li>
+                        <li><a href="#">Army/Navy/Airforce</a></li>
+                        <li><a href="#">Police Jobs</a></li>
+                        <li><a href="#">Teaching Jobs</a></li>
+                        <li><a href="#">Engineering Jobs</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="widget">
+                <div class="widget-title">Latest Results</div>
+                <div class="widget-content">
+                    <ul>
+                        <li><a href="#">UPSC Civil Services Preliminary Result</a></li>
+                        <li><a href="#">SSC CGL Tier II Result</a></li>
+                        <li><a href="#">RRB Group D Result</a></li>
+                        <li><a href="#">IBPS Clerk Final Result</a></li>
+                        <li><a href="#">NTA UGC NET Result</a></li>
+                        <li><a href="#">CTET Result</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="widget">
+                <div class="widget-title">Admit Cards</div>
+                <div class="widget-content">
+                    <ul>
+                        <li><a href="#">UPSC Civil Services Mains Admit Card</a></li>
+                        <li><a href="#">SSC MTS Admit Card</a></li>
+                        <li><a href="#">RRB ALP Admit Card</a></li>
+                        <li><a href="#">IBPS RRB Admit Card</a></li>
+                        <li><a href="#">JEE Main Admit Card</a></li>
+                        <li><a href="#">NEET Admit Card</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="sarkariresultclone.html">Home</a>
+            <a href="About_us.html">About Us</a>
+            <a href="Privacy.html">Privacy Policy</a>
+            <a href="Term&cond.html">Terms & Conditions</a>
+            <a href="Contact_us.html">Contact Us</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Sarkari Result. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
